@@ -1,0 +1,9 @@
+.venv
+.git
+.env
+models
+artifacts
+mlruns
+__pycache__
+.pytest_cache
+data/generated

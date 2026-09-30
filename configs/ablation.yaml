@@ -1,0 +1,7 @@
+seed: 20260929
+models: [logistic, random_forest]
+feature_set: core
+calibration: sigmoid
+threshold: {objective: f1}
+search_iterations: 6
+cv_splits: 3

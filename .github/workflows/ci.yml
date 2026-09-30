@@ -1,0 +1,36 @@
+name: riskflow-local-checks
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.12.21"
+          python-version: "3.11"
+      - run: uv sync --frozen
+      - run: uv run ruff check src tests scripts
+      - run: uv run pytest -q -m 'not spark'
+  spark-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.12.21"
+          python-version: "3.11"
+      - run: uv sync --frozen --extra spark
+      - run: uv run --extra spark pytest -q tests/test_spark.py
+        env:
+          RISKFLOW_TEST_SPARK: "1"
+          SPARK_LOCAL_IP: 127.0.0.1

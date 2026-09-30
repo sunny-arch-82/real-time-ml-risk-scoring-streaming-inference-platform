@@ -1,0 +1,10 @@
+# EXAMPLE policy values, not measured/tuned standards.
+minimum_validation_ap: 0.10
+allowed_ap_drop: 0.02
+minimum_precision: 0.0
+minimum_recall: 0.0
+psi_threshold: 0.20
+js_threshold: 0.10
+minimum_recent_ap: 0.10
+minimum_new_labels: 200
+minimum_monitoring_rows: 100

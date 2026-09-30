@@ -1,0 +1,13 @@
+{
+  "transaction_id": "live-20260930-000000",
+  "account_id": "account-25",
+  "timestamp": "2026-02-01T00:01:14+00:00",
+  "amount": 32.49,
+  "merchant_id": "merchant-53",
+  "category": "electronics",
+  "country": "US",
+  "currency": "USD",
+  "device_id": "device-25",
+  "trusted_device_id": "device-25",
+  "payment_method": "card"
+}

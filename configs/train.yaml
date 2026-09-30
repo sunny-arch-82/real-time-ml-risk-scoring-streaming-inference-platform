@@ -1,0 +1,12 @@
+seed: 20260929
+models: [logistic, random_forest]
+feature_set: full
+train_fraction: 0.60
+calibration_fraction: 0.15
+threshold_fraction: 0.10
+calibration: sigmoid
+threshold:
+  objective: f1
+search_iterations: 6
+cv_splits: 3
+cv_gap: 0
